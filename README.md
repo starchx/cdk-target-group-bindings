@@ -15,9 +15,11 @@ This is a demo project to show how to use target group binding in EKS with AWS L
 
 ## How to deploy this demo
 
-- `npm i`   compile typescript to js
+- `npm i`   install dependencies
 - `npm run build`   compile typescript to js
 - `npx cdk deploy`   watch for changes and compile
+- uncomment out line 122-126 in `cdk-target-group-bindings-stack.ts`
+- `npx cdk deploy`
 
 ![Deployed App!](/docs/hello-k8s.png)
 

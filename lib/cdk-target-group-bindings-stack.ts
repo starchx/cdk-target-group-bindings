@@ -117,11 +117,13 @@ export class CdkTargetGroupBindingsStack extends Stack {
         targetGroupARN: tg1.targetGroupArn,
       }
     };
-    const tgbDeploy = new eks.KubernetesManifest(this, 'hello-kub-tgb', {
-      cluster,
-      manifest: [tgb],
-    });
-    tgbDeploy.node.addDependency(albController)
+
+    // todo: resolve the dependency wait here
+    // const tgbDeploy = new eks.KubernetesManifest(this, 'hello-kub-tgb', {
+    //   cluster,
+    //   manifest: [tgb],
+    // });
+    // tgbDeploy.node.addDependency(albController)
 
     // output
     new CfnOutput(this, 'AlbCname', { value: lb.loadBalancerDnsName });
